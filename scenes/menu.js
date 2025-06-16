@@ -7,7 +7,7 @@ export function makeMenu(p) {
     blinkBack: false,
     load() {
       this.startScreenImgRef = p.loadImage("./assets/Portfolio-.png");
-      this.startTextImgRef = p.loadImage("./assets/start.png");
+      this.startTextImgRef = p.loadImage("./assets/background-art.jpeg");
     },
     update() {
       if (this.alpha <= 0) this.blinkBack = true;
