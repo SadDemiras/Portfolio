@@ -308,7 +308,13 @@ la voici votre récompense !`,
         if (this.playerPokemon.isFainted) {
           this.dialogBox.clearText();
           this.dialogBox.displayText(
-            `${this.playerPokemon.name} fainted ! You lost !`
+            `${this.playerPokemon.name} est tombé ! Vous avez perdu ! 
+Revenez quand vous serez prêt.`,
+            async () => {
+              await new Promise((resolve) => setTimeout(resolve, 1500));
+              this.dialogBox.clearText();
+              window.location.href = "index.html"; // <-- Change ça par le nom exact de ta scène suivante
+            }
           );
           this.currentState = states.winnerDeclared;
         }
