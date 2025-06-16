@@ -7,7 +7,12 @@ export function makeMenu(p) {
     blinkBack: false,
     load() {
       this.startScreenImgRef = p.loadImage("./assets/Portfolio-.png");
+      console.log("Loading start screen image...");
       this.startTextImgRef = p.loadImage("./assets/start.png");
+      console.log("Loading start text image...");
+      if (!this.startScreenImgRef || !this.startTextImgRef) {
+        console.error("Failed to load images. Check file paths.");
+      }
     },
     update() {
       if (this.alpha <= 0) this.blinkBack = true;
